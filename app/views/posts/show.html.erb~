@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>JOB:</b>
+  <%= @post.comment %>
+</p>
+
+<p>
+  <b>Serial:</b>
+  <%= @post.user_id %>
+</p>
+
+<table>
+<tr>
+<td class="btn btn-default navbar-btn">
+
+<%= link_to 'Edit', edit_post_path(@post) %> </td>
+<td class="btn btn-default navbar-btn">
+
+<%= link_to 'Back', posts_path %></td>
+
+</tr>
+</table>

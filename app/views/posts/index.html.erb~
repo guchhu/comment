@@ -1,0 +1,50 @@
+<div class="jumbotron">
+<h1>New Job Offers</h1>
+</div>
+
+<table>
+  <tr><br><br>
+    <th>Serial</th>
+    <th>JOB</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+
+  <tr>
+    <td class="btn btn-default navbar-btn"><%= post.user_id %></td>
+    <td class="well well-lg"><%= post.comment %></td>
+    
+
+  <td>
+     <div class="btn-group">
+     <button type="button" class="btn btn-default">Action</button>
+     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+     <span class="caret"></span>
+     </button>
+
+        <ul class="dropdown-menu">
+
+         <li><%= link_to 'Show', post %></li>
+         <li><%= link_to 'Edit', edit_post_path(post) %></li>
+         <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+
+        </ul>
+     </div>
+   </td>
+
+</tr> 
+
+<% end %>
+</table>
+
+
+<br />
+<table>
+<tr>
+<td class="btn btn-default navbar-btn"><%= link_to 'New Comment', new_post_path %></td>
+</tr>
+
+</table>
